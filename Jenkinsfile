@@ -25,7 +25,7 @@ pipeline {
     stage('Performance Test') {
     steps {
         echo 'Menjalankan Load Test dengan nama file dinamis...'
-        bat 'C:\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t "D:\\Devops-PT\\Script\\Kalkulator.jmx"'
+        bat 'C:\\Users\\APLIC\\Documents\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t "D:\\Devops-PT\\Script\\Kalkulator.jmx"'
     }
         }
     }
