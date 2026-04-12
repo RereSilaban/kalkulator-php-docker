@@ -21,7 +21,13 @@ pipeline {
         bat 'docker rm kalkulator-running || exit 0'
         bat 'docker run -d --name kalkulator-running -p 9090:80 kalkulator-php-test'
                 }
-        } 
+        }
+    stage('Performance Test') {
+    steps {
+        echo 'Menjalankan Load Test dengan nama file dinamis...'
+        bat 'C:\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t "D:\\Devops-PT\\Script\\Kalkulator.jmx"'
+    }
+        }
     }
     post {
         always {
