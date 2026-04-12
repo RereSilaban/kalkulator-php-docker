@@ -26,9 +26,15 @@ pipeline {
     post {
         always {
             echo 'Proses Selesai!'
+             mail to: 'reisnaulilammaida@gmail.com',
+             subject: "Yuhu! Build ${env.JOB_NAME} Updated nih!",
+             body: "Ada Update dan buld baru ya. Link: ${env.BUILD_URL}"
         }
         failure {
             echo 'Build Gagal! Mengirim email...'
+            mail to: 'reisnaulilammaida@gmail.com',
+            subject: "Waduh! Build ${env.JOB_NAME} Gagal nih!",
+            body: "Cek buruan di Jenkins ya, ada yang error pas build Docker-nya. Link: ${env.BUILD_URL}"
             // Di sini nanti email notifikasi akan otomatis terpicu
         }
     }
