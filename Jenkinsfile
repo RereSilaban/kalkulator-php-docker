@@ -15,12 +15,12 @@ pipeline {
         }
         stage('Deploy Container') {
             steps {
-                // Hapus container lama kalau ada, biar gak error port-nya
-                bat 'docker stop container-kalkulator || exit 0'
-                bat 'docker rm container-kalkulator || exit 0'
-                // Jalankan di port 9090
-                bat 'docker run -d --name container-kalkulator -p 9090:80 kalkulator-rere'
-            }
+        // Gunakan nama container 'container-kalkulator' (bebas)
+        // Tapi nama IMAGE di paling belakang harus 'kalkulator-php-test'
+        bat 'docker stop container-kalkulator || exit 0'
+        bat 'docker rm container-kalkulator || exit 0'
+        bat 'docker run -d --name container-kalkulator -p 9090:80 kalkulator-php-test'
+                }
         }
     }
     post {
