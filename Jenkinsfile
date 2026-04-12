@@ -15,13 +15,13 @@ pipeline {
         }
         stage('Deploy Container') {
             steps {
-        // Gunakan nama container 'container-kalkulator' (bebas)
+        // Gunakan nama container 'kalkulator-running' (bebas)
         // Tapi nama IMAGE di paling belakang harus 'kalkulator-php-test'
-        bat 'docker stop container-kalkulator || exit 0'
-        bat 'docker rm container-kalkulator || exit 0'
-        bat 'docker run -d --name container-kalkulator -p 9090:80 kalkulator-php-test'
+        bat 'docker stop kalkulator-running || exit 0'
+        bat 'docker rm kalkulator-running || exit 0'
+        bat 'docker run -d --name kalkulator-running -p 9090:80 kalkulator-php-test'
                 }
-        }
+        } 
     }
     post {
         always {
