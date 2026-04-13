@@ -28,7 +28,8 @@ pipeline {
         bat 'C:\\Users\\APLIC\\Documents\\apache-jmeter-5.6.3\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t "D:\\Devops-PT\\Script\\Kalkulator.jmx"'
         echo '--- HASIL SUMMARY TERBARU ---'
         // Mencari file .jtl terbaru di folder Hasil dan menampilkan isinya ke Console
-        bat 'powershell -Command "Get-ChildItem D:\\Devops-PT\\Result\\*.jtl | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | Get-Content"'
+        //bat 'powershell -Command "Get-ChildItem D:\\Devops-PT\\Result\\*.jtl | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | Get-Content"'
+        bat 'forfiles /P "D:\\Devops-PT\\Result" /M *.jtl /S /D +0 /C "cmd /c type @path"'
     }
         }
     }
