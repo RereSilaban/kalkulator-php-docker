@@ -26,14 +26,11 @@ pipeline {
     steps {
         echo 'Menjalankan Load Test dengan nama file dinamis...'
         bat 'C:\\Users\\APLIC\\Documents\\apache-jmeter-5.6.3\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t "D:\\Devops-PT\\Script\\Kalkulator.jmx"'
+        echo '--- HASIL SUMMARY TERBARU ---'
+        // Mencari file .jtl terbaru di folder Hasil dan menampilkan isinya ke Console
+        bat 'powershell -Command "Get-ChildItem D:\\Devops-PT\\Result\\*.jtl | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | Get-Content"'
     }
         }
-        post {
-    always {
-        // Membaca file hasil test kamu (pastikan path-nya benar)
-        perfReport errorFailedThreshold: 5, errorUnstableThreshold: 2, sourceDataFiles: 'D:/Devops-PT/Hasil/hasil_test.jtl'
-    }
-}
     }
     post {
         always {
