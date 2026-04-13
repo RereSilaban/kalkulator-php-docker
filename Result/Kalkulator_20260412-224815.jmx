@@ -1,0 +1,21 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1776008895376,145,http://localhost:9090/,200,OK,Thread Group 1-1,text,true,,934,592,1,1,http://localhost:9090/,140,0,27
+1776008895309,145,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,934,592,1,1,null,140,94,27
+1776008895557,105,http://localhost:9090/,200,OK,Thread Group 1-1,text,true,,934,592,1,1,http://localhost:9090/,105,0,1
+1776008895549,105,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,934,592,1,1,null,105,9,1
+1776008895664,104,http://localhost:9090/,200,OK,Thread Group 1-1,text,true,,934,592,1,1,http://localhost:9090/,104,0,1
+1776008895663,104,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,934,592,1,1,null,104,2,1
+1776008895769,105,http://localhost:9090/,200,OK,Thread Group 1-1,text,true,,934,592,1,1,http://localhost:9090/,105,0,1
+1776008895769,105,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,934,592,1,1,null,105,1,1
+1776008895875,105,http://localhost:9090/,200,OK,Thread Group 1-1,text,true,,934,592,1,1,http://localhost:9090/,105,0,1
+1776008895875,105,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,934,592,1,1,null,105,0,1
+1776008895981,104,http://localhost:9090/,200,OK,Thread Group 1-1,text,true,,934,592,1,1,http://localhost:9090/,104,0,1
+1776008895981,104,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,934,592,1,1,null,104,0,1
+1776008896086,104,http://localhost:9090/,200,OK,Thread Group 1-1,text,true,,934,592,1,1,http://localhost:9090/,104,0,1
+1776008896086,104,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,934,592,1,1,null,104,0,1
+1776008896191,103,http://localhost:9090/,200,OK,Thread Group 1-1,text,true,,934,592,1,1,http://localhost:9090/,103,0,1
+1776008896190,103,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,934,592,1,1,null,103,2,1
+1776008896296,104,http://localhost:9090/,200,OK,Thread Group 1-1,text,true,,934,592,1,1,http://localhost:9090/,104,0,1
+1776008896295,104,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,934,592,1,1,null,104,2,1
+1776008896401,104,http://localhost:9090/,200,OK,Thread Group 1-1,text,true,,934,592,1,1,http://localhost:9090/,104,0,1
+1776008896401,104,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,934,592,1,1,null,104,1,1

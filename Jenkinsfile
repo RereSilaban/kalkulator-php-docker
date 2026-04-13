@@ -28,6 +28,12 @@ pipeline {
         bat 'C:\\Users\\APLIC\\Documents\\apache-jmeter-5.6.3\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t "D:\\Devops-PT\\Script\\Kalkulator.jmx"'
     }
         }
+        post {
+    always {
+        // Membaca file hasil test kamu (pastikan path-nya benar)
+        perfReport errorFailedThreshold: 5, errorUnstableThreshold: 2, sourceDataFiles: 'D:/Devops-PT/Hasil/hasil_test.jtl'
+    }
+}
     }
     post {
         always {
