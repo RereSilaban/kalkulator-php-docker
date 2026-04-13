@@ -25,17 +25,13 @@ pipeline {
     stage('Performance Test') {
     steps {
         echo 'Menjalankan Load Test...'
-        // 1. Jalankan JMeter seperti biasa
-        bat 'C:\\Users\\APLIC\\Documents\\apache-jmeter-5.6.3\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t "D:\\Devops-PT\\Script\\Kalkulator.jmx"'
+        // Kita pakai perintah -l untuk MEMAKSA JMeter nulis ke folder itu
+        // Kita pakai nama file 'hasil_akhir.jtl' biar gak pusing sama jam-jam-an
+        bat 'C:\\Users\\APLIC\\Documents\\apache-jmeter-5.6.3\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t "D:\\Devops-PT\\Script\\Kalkulator.jmx" -l "D:\\Devops-PT\\Result\\hasil_akhir.jtl" -f'
         
-        echo '--- MENGAMBIL HASIL TERBARU ---'
-        // 2. Copy semua file .jtl dari Drive D ke Workspace Jenkins (titik '.' artinya folder saat ini)
-        bat 'copy /Y "D:\\Devops-PT\\Result\\*.jtl" .'
-        
-        // 3. Baca isinya langsung dari Workspace
-        // Ini akan memunculkan semua baris data JTL di Console Output Jenkins
-        bat 'type *.jtl'
-    }
+        echo '--- MEMBACA HASIL DARI DRIVE D ---'
+        // Kita baca file spesifik yang barusan dibuat
+        bat 'type "D:\\Devops-PT\\Result\\hasil_akhir.jtl"'
         }
     }
     post {
