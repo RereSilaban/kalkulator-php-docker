@@ -24,12 +24,17 @@ pipeline {
         }
     stage('Performance Test') {
     steps {
-        echo 'Menjalankan Load Test dengan nama file dinamis...'
+        echo 'Menjalankan Load Test...'
+        // 1. Jalankan JMeter seperti biasa
         bat 'C:\\Users\\APLIC\\Documents\\apache-jmeter-5.6.3\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t "D:\\Devops-PT\\Script\\Kalkulator.jmx"'
-        echo '--- HASIL SUMMARY TERBARU ---'
-        // Mencari file .jtl terbaru di folder Hasil dan menampilkan isinya ke Console
-        //bat 'powershell -Command "Get-ChildItem D:\\Devops-PT\\Result\\*.jtl | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | Get-Content"'
-        bat 'forfiles /P "D:\\Devops-PT\\Result" /M *.jtl /S /D +0 /C "cmd /c type @path"'
+        
+        echo '--- MENGAMBIL HASIL TERBARU ---'
+        // 2. Copy semua file .jtl dari Drive D ke Workspace Jenkins (titik '.' artinya folder saat ini)
+        bat 'copy /Y "D:\\Devops-PT\\Result\\*.jtl" .'
+        
+        // 3. Baca isinya langsung dari Workspace
+        // Ini akan memunculkan semua baris data JTL di Console Output Jenkins
+        bat 'type *.jtl'
     }
         }
     }
