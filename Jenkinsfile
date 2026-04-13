@@ -25,7 +25,7 @@ pipeline {
                 bat 'C:\\Users\\APLIC\\Documents\\apache-jmeter-5.6.3\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t "D:\\Devops-PT\\Script\\Kalkulator.jmx" -l "D:\\Devops-PT\\Result\\hasil_akhir.jtl" -f'
                 
                 // Trik: Mencari kata ",false,". Kalau KETEMU, jalankan exit 1 (Bikin Jenkins Merah)
-                bat 'findstr /C:",false," "D:\\Devops-PT\\Result\\hasil_akhir.jtl" && (echo WADUH ADA ERROR! && exit 1) || (echo SEMUA REQUEST AMAN!)'
+                bat 'findstr /C:",false," "D:\\Devops-PT\\Result\\hasil_akhir.jtl" && (echo WADUH ADA ERROR! && exit 1) || (echo SEMUA REQUEST AMAN! && exit 0)'
                 
                 echo '--- MEMBACA HASIL DARI DRIVE D ---'
                 bat 'type "D:\\Devops-PT\\Result\\hasil_akhir.jtl"'
