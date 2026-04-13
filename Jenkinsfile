@@ -35,6 +35,7 @@ pipeline {
 
     post {
         always {
+            perfReport sourceDataFiles: 'D:/Devops-PT/Result/hasil_akhir.jtl'
             echo 'Proses Selesai!'
             mail to: 'reisnaulilammaida@gmail.com',
                  subject: "Yuhu! Build ${env.JOB_NAME} Updated nih!",
